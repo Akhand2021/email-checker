@@ -1,0 +1,6 @@
+{
+    "require": {
+        "egulias/email-validator": "^3.2",
+        "elliotjreed/disposable-emails-filter": "^3.4"
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "elliotjreed/disposable-emails-filter",
+  "license": "MIT",
+  "type": "package",
+  "description": "A PHP package for determining whether an email address is from a disposable / temporary email address provider.",
+  "authors": [
+    {
+      "name": "Elliot J. Reed",
+      "email": "disposable-emails-development@elliotjreed.com",
+      "homepage": "https://www.elliotjreed.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ElliotJReed\\DisposableEmail\\": "src/ElliotJReed/DisposableEmail/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\ElliotJReed\\DisposableEmail\\": "tests/ElliotJReed/DisposableEmail/"
+    }
+  },
+  "require": {
+    "php": "^7.4|^8.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.13",
+    "phpunit/phpunit": "^9.5",
+    "roave/security-advisories": "dev-master",
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "scripts": {
+    "test": [
+      "@phpunit:coverage",
+      "@phpcs"
+    ],
+    "phpunit": "vendor/bin/phpunit -c phpunit.xml",
+    "phpunit:debug": "vendor/bin/phpunit --stop-on-failure -c phpunit.xml",
+    "phpunit:coverage": "vendor/bin/phpunit -c phpunit.xml --coverage-html ./coverage --coverage-text",
+    "phpunit:ci": "mkdir -p ./build/logs && vendor/bin/phpunit -c phpunit.xml --coverage-text=coverage.txt --coverage-clover ./build/logs/clover.xml",
+    "phpcs": "vendor/bin/php-cs-fixer fix --allow-risky=yes && vendor/bin/phpcs --standard=phpcs.xml",
+    "phpcs:ci": "vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run && vendor/bin/phpcs --standard=phpcs.xml"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  }
+}

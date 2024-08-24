@@ -1,0 +1,16 @@
+composer.phar
+/vendor
+/.idea
+/node_modules
+.phpunit.result.cache
+.php-cs-fixer.cache
+/coverage
+infection.log
+/build
+.DS_Store
+.docker-sync
+composer.lock
+yarn-error.log
+/.env.local
+/.env.local.php
+/.env.*.local
